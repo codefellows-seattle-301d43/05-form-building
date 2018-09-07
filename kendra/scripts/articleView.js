@@ -88,7 +88,7 @@ articleView.initNewArticlePage = () => {
   });
 
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
-  $('form').on('change', () => {
+  $('form').on('input', () => {
     articleView.create();
   })
 };
