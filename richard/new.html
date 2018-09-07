@@ -11,7 +11,20 @@
     <link rel="stylesheet" href="styles/modules.css">
     <!-- NOTE (stretch goal): To fully incorporate the highlighting library "hljs" we need to fill the empty link tag below to refer to a CSS file that will handle our text highlighting -->
     <link>
-    <!-- TODO: We want our new article form to be able to display a preview of the article that is being entered. Thus, we need code here that will recreate the same structure of our other articles. What do you think we need to add here? -->
+    <!-- DONE ** TODO: We want our new article form to be able to display a preview of the article that is being entered. Thus, we need code here that will recreate the same structure of our other articles. What do you think we need to add here? -->
+    <script id="article-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div>
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            {{publishStatus}}
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+    </script>
     </head>
   <body>
     <header class="clearfix">
@@ -34,6 +47,13 @@
 
       <section id="write" class="tab-content">
         <h1>Create New Article</h1>
+        <form>
+          <label for="title">Title: <input name="title" id="title" type="text"> </label>
+          <label for="body">Body: <textarea name="body" id="body"> </textarea></label>
+          <label for="author">Author: <input name="author" id="author" type="text"> </label>
+          <label for="url">URL: <input name="url" id="url" type="text"> </label>
+          <label for="category">Category: <input name="category" id="category" type="text"> </label>
+          <label for="published">Publish: <input name="title" id="title" type="checkbox"> </label>
         <!-- TODO: Set up a form to accept user input for a new blog article. Remember that we need:
            1. Article title
            2. Article body
@@ -41,6 +61,7 @@
            4. Author's URL
            5. Article category
            6. Some way to know if this article is a draft or is published -->
+        </form>
       </section>
 
       <section id="articles" class="tab-content">
@@ -66,7 +87,7 @@
       // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
       // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
       //  Hint: Look in articleView.js for a function that does this.
-
+      article Thing .something ()
       // COMMENT: What is this function doing? Why do we need it?
       // PUT YOUR RESPONSE HERE
     </script>
