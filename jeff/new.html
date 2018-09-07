@@ -34,7 +34,26 @@
 
       <section id="write" class="tab-content">
         <h1>Create New Article</h1>
-        <!-- TODO: Set up a form to accept user input for a new blog article. Remember that we need:
+        <form action="">
+          <label for="title">Title</label>
+          <input id="title" type="text" name="title">
+
+          <label for="body">Body</label>
+          <textarea name="body" id="body" cols="30" rows="5"></textarea>
+
+          <label for="author">Author</label>
+          <input id="author" type="text" name="author">
+
+          <label for="author_url">URL</label>
+          <input id="author_url" type="text" name="authorURL">
+
+          <label for="category">Category</label>
+          <input id="category" type="text" name="category">
+
+          <label for="published">Published</label>
+          <input id="published" type="checkbox" name="published">
+        </form>
+        <!-- DONE** TODO: Set up a form to accept user input for a new blog article. Remember that we need:
            1. Article title
            2. Article body
            3. Article author
@@ -66,7 +85,7 @@
       // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
       // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
       //  Hint: Look in articleView.js for a function that does this.
-
+      articleView.initNewArticlePage();
       // COMMENT: What is this function doing? Why do we need it?
       // PUT YOUR RESPONSE HERE
     </script>
