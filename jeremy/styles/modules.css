@@ -64,7 +64,7 @@ a:hover, a:focus {
 /* === FORM STYLES === */
 
 label {
-  font-size: 3em;
+  font-size: 1.5em;
 }
 
 input {
@@ -84,7 +84,7 @@ input[type="checkbox"] {
 textarea {
   width: 100%;
   margin: .5em 0;
-  font-size: 2em;
+  font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 0;
 }
