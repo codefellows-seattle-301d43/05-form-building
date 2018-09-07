@@ -34,6 +34,20 @@
 
       <section id="write" class="tab-content">
         <h1>Create New Article</h1>
+        <form>
+          <input type="text" id="title" name="title" />
+          <label for="title">Title</label>
+          <textarea id="body" name="body"></textarea>
+          <label for="body">Body</label>
+          <input type="text" id="author" name="author" />
+          <label for="author">Author</label>
+          <input type="text" id="url" name="url" />
+          <label for="url">Author URL</label>
+          <input type="text" id="category" name="category" />
+          <label for="category">Category</label>
+          <input type="checkbox" id="checkbox" name="checkbox" />
+          <label for="checkbox">Published</label>
+        </form>
         <!-- TODO: Set up a form to accept user input for a new blog article. Remember that we need:
            1. Article title
            2. Article body
@@ -66,7 +80,7 @@
       // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
       // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
       //  Hint: Look in articleView.js for a function that does this.
-
+      articleView.initNewArticlePage();
       // COMMENT: What is this function doing? Why do we need it?
       // PUT YOUR RESPONSE HERE
     </script>
