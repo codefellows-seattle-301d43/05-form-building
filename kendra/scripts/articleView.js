@@ -119,7 +119,7 @@ articleView.create = () => {
   $('pre code').each();
 
   // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
-
+  $('#export').val(JSON.stringify(newArticle));
 };
 
 // COMMENT: Where is this function called? Why?
