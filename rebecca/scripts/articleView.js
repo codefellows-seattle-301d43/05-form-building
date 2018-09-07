@@ -88,6 +88,9 @@ articleView.initNewArticlePage = () => {
   });
 
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
+  $('form').on('input', function() {
+    articleView.create();
+  })
 
 };
 
@@ -102,11 +105,14 @@ articleView.create = () => {
     author: $('#author').val(),
     authorUrl: $('#authorUrl').val(),
     category: $('#category').val(),
-    body: $('#body').val()
+    body: $('#body').val(),
+    publishedOn: Date.now()
   });
 
-  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+  console.log(newArticle);
 
+  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+  $('#articles').append(newArticle.toHtml());
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each();
