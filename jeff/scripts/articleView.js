@@ -87,26 +87,38 @@ articleView.initNewArticlePage = () => {
     this.select();
   });
 
-  // TODO: Add an event handler to update the preview and the export field if any inputs change.
-
+  // DONE** TODO: Add an event handler to update the preview and the export field if any inputs change.
+  $('form').on('input', () => {
+    articleView.create();
+  })
 };
 
 articleView.create = () => {
-  // TODO: Set up a variable to hold the new article we are creating.
+  // DONE** TODO: Set up a variable to hold the new article we are creating.
+
   // Clear out the #articles element, so we can put in the updated preview
+  $('#articles').empty();
 
 
-  // TODO: Instantiate an article based on what's in the form fields:
-
+  // DONE** TODO: Instantiate an article based on what's in the form fields:
+  let newArticle = new Article({
+    title: $('#title').val(),
+    author: $('#author').val(),
+    authorUrl: $('#author_url').val(),
+    body: $('#body').val(),
+    category: $('#category').val(),
+    publishedOn: Date.now()
+  })
+  console.log(newArticle);
 
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
-
+  $('#articles').append(newArticle.toHtml());
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each();
 
-  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
-
+  // DONE** TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  $('#export').val(JSON.stringify(newArticle));
 };
 
 // COMMENT: Where is this function called? Why?
