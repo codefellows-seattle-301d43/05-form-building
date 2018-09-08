@@ -82,8 +82,10 @@ articleView.initNewArticlePage = () => {
 
   // DONE: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
-  $('#article-json').on('focus', function(){
+  $('#article-JSON').on('focus',function(){
     this.select();
+    document.execCommand('copy');
+    console.log('new article JSON copied to clipboard');
   });
 
   // DONE: Add an event handler to update the preview and the export field if any inputs change.
@@ -118,7 +120,7 @@ articleView.create = () => {
   // });
 
   // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
-  $('#export').val(JSON.stringify(newArticle));
+  $('#article-JSON').val(JSON.stringify(newArticle));
 };
 
 // COMMENT: Where is this function called? Why?
