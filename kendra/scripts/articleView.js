@@ -77,18 +77,18 @@ articleView.setTeasers = () => {
 // COMMENT: Where is this function called? Why?
 // This function is called at the bottom of new.html to initialize the page in the same way we call init.IndexPage() at the bottom of index.html
 articleView.initNewArticlePage = () => {
-  // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
+  // DONE: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
+  $('#article-export').hide();
 
-
-  // TODO: The new articles we create will be copy/pasted into our source data file.
+  // DONE: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
-
   $('#article-json').on('focus', function(){
     this.select();
   });
 
-  // TODO: Add an event handler to update the preview and the export field if any inputs change.
+  // DONE: Add an event handler to update the preview and the export field if any inputs change.
   $('form').on('input', () => {
+    $('#article-export').show();
     articleView.create();
   })
 };
@@ -109,14 +109,13 @@ articleView.create = () => {
     publishedOn: new Date()
   });
 
-  console.log(newArticle);
-
-
   // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
   $('#articles').append(newArticle.toHtml());
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  $('pre code').each();
+  // $('pre code').each(function(block) {
+  //   hljs.highlightBlock(block);
+  // });
 
   // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   $('#export').val(JSON.stringify(newArticle));
