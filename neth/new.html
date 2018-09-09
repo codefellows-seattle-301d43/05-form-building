@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="vendor/styles/normalize.css">
+    <link rel="stylesheet" href="vendor/styles/icons.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <!-- NOTE (stretch goal): To fully incorporate the highlighting library "hljs" we need to fill the empty link tag below to refer to a CSS file that will handle our text highlighting -->
+    <link>
+    <script id="article-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+        <header>
+          <h1>{{title}}</h1>
+          <div>
+            By <address><a href="{{authorUrl}}">{{author}}</a></address>
+            {{publishStatus}}
+          </div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+    </script>
+  </head>
+  <body>
+    <header class="clearfix">
+      <section class="pull-left">
+        <h1>
+          Kilovolt Blog!
+        </h1>
+        <h2>The shocking power of static pages</h2>
+      </section>
+      <nav>
+        <div class="icon-menu"></div>
+        <ul>
+          <li class="tab" data-content="write"><a href="#" class="icon-home"> Write</a></li>
+          <li class="tab" data-content="articles"><a href="#" class="icon-home"> Preview</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="clearfix">
+
+      <section id="write" class="tab-content">
+        <h1>Create New Article</h1>
+        <form>
+          <label for="title">Title</label><input name="title" type="text" />
+          <textarea name="body" id="" cols="30" rows="5"></textarea>
+          <label for="author">Author</label><input name="author" type="text">
+          <label for="authorUrl">Url</label><input name="authorUrl" type="text">
+          <label for="category">Category</label><input name="category" type="text">
+          <label for="author">Published? </label><input name="author" type="checkbox">
+        </form>
+      </section>
+
+      <section id="articles" class="tab-content">
+        <!-- Preview Goes Here -->
+      </section>
+
+      <section id="article-export">
+        <!-- generated JSON goes here -->
+        <input type='text' disabled id="export" />
+      </section>
+
+    </main>
+    <footer>
+      &copy; 2018 Code Fellows | Static Blog | Happy Ipsum!
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <!-- NOTE (stretch goal): Include script tags for 3rd party libraries to enable Markdown rendering and code syntax highlighting. Use the minified CDN. Keep in mind that if we want these features to render properly on our main blog page (index.html) that we'll need to add those scripts over there, too. -->
+    <script src="scripts/blogArticles.js"></script>
+    <script src="scripts/article.js"></script>
+    <script src="scripts/articleView.js"></script>
+    <script>
+      articleView.initNewArticlePage();
+      // COMMENT: What is this function doing? Why do we need it?
+      // PUT YOUR RESPONSE HERE
+    </script>
+  </body>
+</html>
