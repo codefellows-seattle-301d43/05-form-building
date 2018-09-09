@@ -78,7 +78,7 @@
     </section>
 
     <section id="article-export">
-      <!-- TODO: Refer to the preview image to see what we will be building here: we need a container of some kind to hold a JSON export of our article. Ideally this container would show only a incipit (short preview) of the JSON and also be clickable to allow easy selection of the text it holds. What kind of element could we use for this? -->
+      <!-- DONE: Refer to the preview image to see what we will be building here: we need a container of some kind to hold a JSON export of our article. Ideally this container would show only a incipit (short preview) of the JSON and also be clickable to allow easy selection of the text it holds. What kind of element could we use for this? -->
       <pre><code id="export"></code></pre>
     </section>
 
@@ -97,13 +97,14 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <script>
-    // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
+    // DONE: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
     // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
     //  Hint: Look in articleView.js for a function that does this.
     articleView.initNewArticlePage();
 
       // COMMENT: What is this function doing? Why do we need it?
-      // PUT YOUR RESPONSE HERE
+      // We need to invoke a function repsonsible for new article generation
+      // in order to get form for a new article.
   </script>
 </body>
 

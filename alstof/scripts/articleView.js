@@ -93,14 +93,14 @@ articleView.setTeasers = () => {
 articleView.initNewArticlePage = () => {
   // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
 
-  // TODO: The new articles we create will be copy/pasted into our source data file.
+  // DONE: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
 
   $('#article-json').on('focus', function() {
     this.select();
   });
 
-  // TODO: Add an event handler to update the preview and the export field if any inputs change.
+  // DONE: Add an event handler to update the preview and the export field if any inputs change.
   $('form').on('input', 'input, textarea', articleView.create);
 };
 
@@ -112,7 +112,7 @@ articleView.create = () => {
   // DONE: Instantiate an article based on what's in the form fields:
   $('#articles').empty();
 
-  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+  // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
   newArticle = new Article({
     title: $('#inpTitle').val(),
     author: $('#inpAuthor').val(),
@@ -123,10 +123,10 @@ articleView.create = () => {
   });
 
   $('#articles').append(newArticle.toHtml());
-  // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+  // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   $('#export').text(JSON.stringify(newArticle, null, 2));
 
+  // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each((ndx, elm) => {
     hljs.highlightBlock(elm);
   });
