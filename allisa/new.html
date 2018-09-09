@@ -11,7 +11,21 @@
     <link rel="stylesheet" href="styles/modules.css">
     <!-- NOTE (stretch goal): To fully incorporate the highlighting library "hljs" we need to fill the empty link tag below to refer to a CSS file that will handle our text highlighting -->
     <link>
-    <!-- TODO: We want our new article form to be able to display a preview of the article that is being entered. Thus, we need code here that will recreate the same structure of our other articles. What do you think we need to add here? -->
+    <!-- Done: We want our new article form to be able to display a preview of the article that is being entered. Thus, we need code here that will recreate the same structure of our other articles. What do you think we need to add here? -->
+    <form>
+      <label for="title">Title: </label>
+      <input type="text" id="title" name="title" />
+      <label for="body">Body: </label>
+      <textarea id="body" name="body"></textarea>
+      <label for="author">Author: </label>
+      <input type="text" id="author" name="author" />
+      <label for="authorUrl">Author URL: </label>
+      <input type="text" id="authorUrl" name="authorUrl" />
+      <label for="category">Category: </label>
+      <input type="text" id="category" name="category" />
+      <label for="published">Published: </label>
+      <input type="checkbox" id="published" name="published" />
+    </form>
     </head>
   <body>
     <header class="clearfix">
@@ -63,12 +77,12 @@
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
     <script>
-      // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
+      // Done: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
       // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
       //  Hint: Look in articleView.js for a function that does this.
-
+      articleView.initNewArticlePage();
       // COMMENT: What is this function doing? Why do we need it?
-      // PUT YOUR RESPONSE HERE
+      // We are putting it here because we only need to access functionality for certain things on this page, not the entire articleView.js file. This allows us to have one js file with code for both pages and access specific code for the pages.
     </script>
   </body>
 </html>
