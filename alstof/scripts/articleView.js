@@ -116,7 +116,7 @@ articleView.create = () => {
   newArticle = new Article({
     title: $('#inpTitle').val(),
     author: $('#inpAuthor').val(),
-    body: $('#inpBody').val(),
+    body: marked($('#inpBody').val()),
     authorUrl: $('#inpUrl').val(),
     category: $('#inpCategory').val(),
     publishedOn: $('#chkPublish').val()
