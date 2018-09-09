@@ -77,16 +77,12 @@ articleView.setTeasers = () => {
 // COMMENT: Where is this function called? Why?
 // PUT YOUR RESPONSE HERE
 articleView.initNewArticlePage = () => {
-  // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
-
-
-  // TODO: The new articles we create will be copy/pasted into our source data file.
+  articleView.handleMainNav();
 
   $('#article-json').on('focus', function(){
     this.select();
   });
 
-  // TODO: Add an event handler to update the preview and the export field if any inputs change.
   $('form').on('input', () => {
     articleView.create();
   })
@@ -105,14 +101,9 @@ articleView.create = () => {
     publishedOn: new Date()
   });
   $('#articles').append(newArticle.toHtml());
-
-  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
-
-
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each();
 
-  // TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   $('#export').val(JSON.stringify(newArticle));
 };
 
