@@ -118,7 +118,7 @@ articleView.create = () => {
   // DONE** TODO: Use our interface to the Handblebars template to put this new article into the DOM:
   $('#articles').append(newArticle.toHtml());
 
-  // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
+  // DONE** TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
 
   $('pre code').each((i, block) => {
     hljs.highlightBlock(block);
