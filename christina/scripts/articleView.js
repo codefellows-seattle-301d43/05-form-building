@@ -79,7 +79,6 @@ articleView.setTeasers = () => {
 articleView.initNewArticlePage = () => {
   // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
 
-
   $('#article-json').on('focus', function(){
     this.select();
   });
@@ -102,7 +101,7 @@ articleView.create = () => {
   let newArticle = new Article({
     title: $('#title').val(),
     author: $('#author').val(),
-    authorURL: $('#authorURL').val(),
+    authorUrl: $('#authorUrl').val(),
     category: $('#category').val(),
     body: $('#body').val(),
     publishedOn: new Date()

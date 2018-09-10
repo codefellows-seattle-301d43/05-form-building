@@ -1,6 +1,8 @@
 'use strict';
 
 var rawData = [
+  {"author":"Bryan G","authorUrl":"bryang.com ","title":"Get Free Food","category":"Food","body":"Food is free here all the time.","publishedOn":"2018-09-10T14:54:14.719Z","daysAgo":0,"publishStatus":"published 0 days ago"},
+
   {
     title:       'Bob Ross Ipsum',
     category:    'art',
