@@ -75,13 +75,14 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// This function is called in the new.html. It is called there because articleView.js is shared by both new and index.html. They share some functionality that is already written in articleView, but initialize other items that are different.
 articleView.initNewArticlePage = () => {
-  // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
+  // DONE: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
 
 
-  // TODO: The new articles we create will be copy/pasted into our source data file.
+  // DONE: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
+  $('article-export').hide();
 
   $('#article-json').on('focus', function(){
     this.select();
@@ -111,15 +112,16 @@ articleView.create = () => {
   $('#articles').append(newArticle.toHtml());
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
+  //Stretch goal according to readme
   $('pre code').each();
 
   // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
-  $('#export').val(JSON.stringify(newArticle));
+  $('#JSON-export').val(JSON.stringify(newArticle));
 
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// This function is called in the index.html. It is called there because articleView.js is shared by both new and index.html. They share some functionality that is already written in articleView, but initialize other items that are different.
 articleView.initIndexPage = () => {
   articles.forEach(article => $('#articles').append(article.toHtml()));
   articleView.populateFilters();
