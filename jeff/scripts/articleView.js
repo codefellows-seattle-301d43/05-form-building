@@ -110,7 +110,7 @@ articleView.create = () => {
     title: $('#title').val(),
     author: $('#author').val(),
     authorUrl: $('#author_url').val(),
-    body: $('#body').val(),
+    body: marked($('#body').val()),
     category: $('#category').val(),
     publishedOn: Date.now()
   })
@@ -119,7 +119,11 @@ articleView.create = () => {
   $('#articles').append(newArticle.toHtml());
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
-  $('pre code').each();
+
+  $('pre code').each((i, block) => {
+    hljs.highlightBlock(block);
+  });
+
 
   // DONE** TODO: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   $('#export').val(JSON.stringify(newArticle));
