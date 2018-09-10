@@ -1,6 +1,6 @@
 'use strict';
 
-var rawData = [
+var rawData = [ {"author":"Richard","authorUrl":"codefellows.com","title":"Me","category":"Coding","body":"The body","publishedOn":"2018-09-07T23:30:09.699Z","daysAgo":0,"publishStatus":"published 0 days ago"},
   {
     title:       'Bob Ross Ipsum',
     category:    'art',
