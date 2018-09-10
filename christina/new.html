@@ -49,20 +49,19 @@
         <h1>Create New Article</h1>
         <form>
           <label for="title">Title: </label>
-          <input type="text" id="article-title" name="article-title">
+          <input type="text" id="title" name="title"/>
           <label for="body">Body: </label>
-          <input type="text" id="article-body" name="article-body">
+          <textarea id="body" name="body"></textarea>
           <label for="author">Author: </label>
-          <input type="text" id="article-author" name="article-author">
-          <label for="author-url">Author\'s URL: </label>
-          <input type="text" id="author-url" name="author-url">
+          <input type="text" id="author" name="author" />
+          <label for="author-url">Author URL: </label>
+          <input type="text" id="authorUrl" name="authorUrl" />
           <label for="category">Category: </label>
-          <input type="text" id="article-category" name="article-category">
+          <input type="text" id="category" name="category" />
           <label for="published">Published: </label>
           <input type="checkbox" id="published" name="published">
-
         </form>
-        <!-- TODO: Set up a form to accept user input for a new blog article. Remember that we need:
+        <!-- DONE: Set up a form to accept user input for a new blog article. Remember that we need:
            1. Article title
            2. Article body
            3. Article author
@@ -91,12 +90,12 @@
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
     <script>
-      // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
-      // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
+      // DONE: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
+      // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that intializes each page.)
       //  Hint: Look in articleView.js for a function that does this.
       articleView.initNewArticlePage();
       // COMMENT: What is this function doing? Why do we need it?
-      // Initializes the articles page
+      // This function nitializes the new articles page.  
     </script>
   </body>
 </html>

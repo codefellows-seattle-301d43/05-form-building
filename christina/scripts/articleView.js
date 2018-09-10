@@ -123,7 +123,7 @@ articleView.create = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// PUT YOUR RESPONSE HERE: The function is called in index.html because we don't need to do these things on the new.html file. We only want to pull in these functions into the index.html file.
 articleView.initIndexPage = () => {
   articles.forEach(article => $('#articles').append(article.toHtml()));
   articleView.populateFilters();
