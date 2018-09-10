@@ -74,14 +74,19 @@ articleView.setTeasers = () => {
   });
 };
 
-// COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// DONE** COMMENT: Where is this function called? Why?
+// It is called in new.html so that we only use this for new.html and not all pages.
 articleView.initNewArticlePage = () => {
-  // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
+  // DONE** TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
 
 
-  // TODO: The new articles we create will be copy/pasted into our source data file.
+  // DONE** TODO: The new articles we create will be copy/pasted into our source data file.
   // Set up this "export" functionality. We can hide it for now, and show it once we have data to export.
+  $('#export').hide();
+
+  $('#published').on('click', () => {
+    $('#export').show();
+  })
 
   $('#article-json').on('focus', function(){
     this.select();
@@ -109,9 +114,8 @@ articleView.create = () => {
     category: $('#category').val(),
     publishedOn: Date.now()
   })
-  console.log(newArticle);
 
-  // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+  // DONE** TODO: Use our interface to the Handblebars template to put this new article into the DOM:
   $('#articles').append(newArticle.toHtml());
 
   // TODO: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
@@ -121,8 +125,8 @@ articleView.create = () => {
   $('#export').val(JSON.stringify(newArticle));
 };
 
-// COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// DONE** COMMENT: Where is this function called? Why?
+// This is called in index.html, so this will only load on index and not new.
 articleView.initIndexPage = () => {
   articles.forEach(article => $('#articles').append(article.toHtml()));
   articleView.populateFilters();
