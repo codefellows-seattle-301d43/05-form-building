@@ -1,6 +1,7 @@
 'use strict';
 
 var rawData = [
+
   {
     title:       'Bob Ross Ipsum',
     category:    'art',
