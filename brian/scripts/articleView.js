@@ -99,6 +99,8 @@ articleView.create = () => {
   $('#articles').empty();
 
   // DONE: Instantiate(making an instance) an article based on what's in the form fields:
+  console.log('test')
+  console.log($('#title'))
   let newArticle = new Article({
     title: $('#title').val, //a jQuery
     author: $('#author').val,
