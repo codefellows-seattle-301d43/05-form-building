@@ -95,13 +95,12 @@ articleView.initNewArticlePage = () => {
 
 articleView.create = () => {
   // DONE: Set up a variable to hold the new article we are creating.
+  let newArticle;
   // Clear out the #articles element, so we can put in the updated preview
   $('#articles').empty();
 
   // DONE: Instantiate(making an instance) an article based on what's in the form fields:
-  console.log('test')
-  console.log($('#title'))
-  let newArticle = new Article({
+  newArticle = new Article({
     title: $('#title').val(), //a jQuery
     author: $('#author').val(),
     authorUrl: $('#authorUrl').val(),
@@ -109,7 +108,7 @@ articleView.create = () => {
     body: $('#body').val(),
     publishedOn: new Date()
   });
-  console.log(newArticle);
+
   // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
   $('#articles').append(newArticle.toHtml());
 

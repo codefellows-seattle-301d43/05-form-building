@@ -1,6 +1,7 @@
 'use strict';
 
 var rawData = [
+  {"author":"Brian","authorUrl":"uwdawgpound.com","title":"Go Dawgs","category":"Sports","body":"Dominate","publishedOn":"2018-09-16T03:05:32.870Z","daysAgo":0,"publishStatus":"published 0 days ago"},
   {
     title:       'Bob Ross Ipsum',
     category:    'art',
