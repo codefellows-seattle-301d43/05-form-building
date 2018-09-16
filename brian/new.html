@@ -34,27 +34,20 @@
 
       <section id="write" class="tab-content">
         <h1>Create New Article</h1>
-        <form>
-          <label for="title"> Title: </label>
-          <input id="title" type="text" name="title" name="title">
-          <label for="body"> Body: </label>
-          <input type="text" name="body" name="body">
-          <label for="author"> Author: </label>
-          <input type="text" name="author" name="author">
-          <label for="authorUrl"> URL: </label>
-          <input type="text" name="authorUrl" name="authorUrl">
-          <label for="authorUrl"> URL: </label>
-          <input type="text" name="authorUrl" name="authorUrl">
-          <label for="category"> URL: </label>
-          <input type="text" name="category" name="category">
-        </form>
-        <!-- TODO: Set up a form to accept user input for a new blog article. Remember that we need:
-           1. Article title
-           2. Article body
-           3. Article author
-           4. Author's URL
-           5. Article category
-           6. Some way to know if this article is a draft or is published -->
+          <form>
+            <label for="title"> Title: </label>
+            <input id="title" type="text" name="title">
+            <label for="body"> Body: </label>
+            <textarea type="text" id="body" name="body">
+            <label for="author"> Author: </label>
+            <input type="text" id="author" name="author">
+            <label for="authorUrl"> URL: </label>
+            <input type="text" id="authorUrl" name="authorUrl">
+            <label for="category"> Category: </label>
+            <input type="text" id="category" name="category">
+            <label for="published"> published: </label>
+            <input type="checkbox" id="published" name="published">
+          </form>
       </section>
 
       <section id="articles" class="tab-content">
@@ -62,6 +55,7 @@
       </section>
 
       <section id="article-export">
+        <input type="text" disabled id="export" />
           <h1>{{title}}</h1>
           <div>
             By <address><a href="{{authorUrl}}">{{author}}</a></address>
@@ -86,7 +80,7 @@
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
     <script>
-      // TODO: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
+      // DONE: We will need to call a function here to initialize the behaviors on this page, once we get them built out. Why?
       // (Look at the bottom of index.html as a reference. Since we are now using our JS on two different HTML pages that have different needs as to what parts of the code they utilize, we need to build a function that inializes each page.)
       //  Hint: Look in articleView.js for a function that does this.
       articleView.initNewArticlePage();

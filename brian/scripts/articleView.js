@@ -102,12 +102,13 @@ articleView.create = () => {
   console.log('test')
   console.log($('#title'))
   let newArticle = new Article({
-    title: $('#title').val, //a jQuery
-    author: $('#author').val,
-    authorUrl: $('#authorUrl').val,
-    body: $('#body').val,
-    category: $('#category')
-  })
+    title: $('#title').val(), //a jQuery
+    author: $('#author').val(),
+    authorUrl: $('#authorUrl').val(),
+    category: $('#category').val(),
+    body: $('#body').val(),
+    publishedOn: new Date()
+  });
   console.log(newArticle);
   // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
   $('#articles').append(newArticle.toHtml());
@@ -116,11 +117,11 @@ articleView.create = () => {
   $('pre code').each();
 
   //DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
-  // $('#export').val(JSON.stringify(newArticle));
+  $('#export').val(JSON.stringify(newArticle));
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// It's called in index.html, this allows the page to be filled with the article data
 articleView.initIndexPage = () => {
   articles.forEach(article => $('#articles').append(article.toHtml()));
   articleView.populateFilters();
