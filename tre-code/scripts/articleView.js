@@ -75,10 +75,10 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// This function is called at the bottom of new.html.  The function is called in the new.html because that's where it's being used. 
 articleView.initNewArticlePage = () => {
-  // TODO: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
-
+  // DONE: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
+  articleView.handleMainNav();
   $('#article-json').on('focus', function(){
     this.select();
   });
@@ -101,18 +101,17 @@ articleView.create = () => {
     category: $('#category').val(),
     body: $('#body').val(),
     publishedOn: new Date()
-  });  
+  });
   // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
   $('#articles').append(newArticle.toHtml());
   // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
   $('pre code').each();
-
   // DONE: Show our export field, and export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
   $('#export').val(JSON.stringify(newArticle));
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// This function is called ath the bottom of the index.html page. The function gets called in the index.html page because it only needs to be used within that page only.
 articleView.initIndexPage = () => {
   articles.forEach(article => $('#articles').append(article.toHtml()));
   articleView.populateFilters();
